@@ -14,7 +14,7 @@ async function main() {
 
   await ntfFoot.deployed();
 
-  console.log("FiredGuys NFT deployed to:", ntfFoot.address);
+  console.log("NTFFoot deployed to:", ntfFoot.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

@@ -1,4 +1,40 @@
 {
   "_format": "hh-sol-cache-2",
-  "files": {}
+  "files": {
+    "C:\\Users\\boine\\Desktop\\nft-foot\\client\\contracts\\NTFFoot.sol": {
+      "lastModificationDate": 1642696389362,
+      "contentHash": "f365198f84c7fdf5a24da779e0adb92f",
+      "sourceName": "contracts/NTFFoot.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "NTFFoot"
+      ]
+    }
+  }
 }
