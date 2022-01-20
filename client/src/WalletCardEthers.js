@@ -1,13 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import {ethers} from 'ethers'
-// import './WalletCard.css'
 
 const WalletCardEthers = () => {
 
 	const [errorMessage, setErrorMessage] = useState(null);
 	const [defaultAccount, setDefaultAccount] = useState(null);
 	const [userBalance, setUserBalance] = useState(null);
-	const [connButtonText, setConnButtonText] = useState('Connect Wallet');
 	const [provider, setProvider] = useState(null);
 
 	const connectWalletHandler = () => {
@@ -18,7 +16,6 @@ const WalletCardEthers = () => {
 			// connect to metamask
 			window.ethereum.request({ method: 'eth_requestAccounts'})
 			.then(result => {
-				setConnButtonText('Wallet Connected');
 				setDefaultAccount(result[0]);
 			})
 			.catch(error => {
@@ -32,18 +29,18 @@ const WalletCardEthers = () => {
 	}
 
 useEffect(() => {
+	connectWalletHandler();
 	if(defaultAccount){
-	provider.getBalance(defaultAccount)
-	.then(balanceResult => {
-		setUserBalance(ethers.utils.formatEther(balanceResult));
-	})
+		provider.getBalance(defaultAccount)
+		.then(balanceResult => {
+			setUserBalance(ethers.utils.formatEther(balanceResult));
+		})
 	};
 }, [defaultAccount]);
 	
 	return (
 		<div className='walletCard'>
 		<h4> Connection to MetaMask using ethers.js </h4>
-			<button onClick={connectWalletHandler}>{connButtonText}</button>
 			<div className='accountDisplay'>
 				<h3>Address: {defaultAccount}</h3>
 			</div>
