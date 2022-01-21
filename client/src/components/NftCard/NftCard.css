@@ -1,0 +1,45 @@
+.nftcard {
+    color:rgb(35, 36, 42);
+    background-color: rgb(158, 173, 202);
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    flex-grow: 1;
+    gap: 10px;
+}
+
+.nftcard img {
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+.nftcard .name {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgb(35, 36, 42);
+    padding: 5px 0;
+}
+
+.nftcard .name.actif {
+    color: palevioletred;
+}
+
+.nftcard .ntfcard-img-container {
+    position: relative;
+}
+
+.nftcard .ntfcard-img-container button {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.nftcard:hover .ntfcard-img-container button {
+    display: block;
+}

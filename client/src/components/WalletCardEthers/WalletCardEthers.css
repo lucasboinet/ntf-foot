@@ -10,6 +10,7 @@
     justify-content: space-between;
     align-items: center;
     padding-left: 10px;
+    z-index: 4;
 }
 
 .walletCard .walletCard-balance {

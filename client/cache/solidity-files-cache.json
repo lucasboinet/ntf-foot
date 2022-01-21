@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "C:\\Users\\boine\\Desktop\\nft-foot\\client\\contracts\\NTFFoot.sol": {
-      "lastModificationDate": 1642696389362,
-      "contentHash": "f365198f84c7fdf5a24da779e0adb92f",
+      "lastModificationDate": 1642773622594,
+      "contentHash": "bd4b105f0f39949bde11c72d04eb3e63",
       "sourceName": "contracts/NTFFoot.sol",
       "solcConfig": {
         "version": "0.8.4",
