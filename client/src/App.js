@@ -4,6 +4,7 @@ import WalletCardEthers from'./WalletCardEthers';
 import {ethers} from 'ethers';
 import NTFFoot from './artifacts/contracts/NTFFoot.sol/NTFFoot.json';
 import { useEffect, useRef, useState } from 'react';
+import Detail from './Detail';
 
 const contractAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
 
@@ -12,6 +13,10 @@ const provider = new ethers.providers.Web3Provider(window.ethereum);
 const signer = provider.getSigner();
 
 const contract = new ethers.Contract(contractAddress, NTFFoot.abi, signer);
+
+const categorie = (id) => {
+
+}
 
 function App() {
   const [value, setValue] = useState(0);
@@ -40,6 +45,15 @@ function App() {
       <input type="number" min="0" placeholder='new number value' ref={contractValue} />
       <button onClick={changeValue}>change value</button>
       <p>Current value : {value}</p>
+      <div>
+        <img />
+        <div>
+          <Detail categorie="hairs" />
+          <Detail categorie="eyes"/>
+          <Detail categorie="nose"/>
+          <Detail categorie="mouth"/>
+        </div>
+      </div>
     </div>
   );
 }
