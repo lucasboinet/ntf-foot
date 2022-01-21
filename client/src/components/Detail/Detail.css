@@ -1,0 +1,7 @@
+.lineaire{
+    display: flex;
+}
+
+.lineaire button {
+    margin: 0 10px;
+}

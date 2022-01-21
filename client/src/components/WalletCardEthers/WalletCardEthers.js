@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import {ethers} from 'ethers'
+import './WalletCardEthers.css'
 
-const WalletCardEthers = () => {
+const WalletCardEthers = ({setUser}) => {
 
 	const [errorMessage, setErrorMessage] = useState(null);
 	const [defaultAccount, setDefaultAccount] = useState(null);
@@ -20,6 +21,7 @@ const WalletCardEthers = () => {
 			})
 			.catch(error => {
 				setErrorMessage(error.message);
+				setUser(null)
 			});
 
 		} else if (!window.ethereum){
@@ -34,22 +36,23 @@ useEffect(() => {
 		provider.getBalance(defaultAccount)
 		.then(balanceResult => {
 			setUserBalance(ethers.utils.formatEther(balanceResult));
+			setUser({account: defaultAccount, balance: ethers.utils.formatEther(balanceResult)})
 		})
 	};
 }, [defaultAccount]);
 	
-	return (
+	return !errorMessage ? (
 		<div className='walletCard'>
-		<h4> Connection to MetaMask using ethers.js </h4>
-			<div className='accountDisplay'>
-				<h3>Address: {defaultAccount}</h3>
+			<h3>NFT-Foot</h3>
+			<div className='walletCard-owner'>{defaultAccount}</div>
+			<div className='walletCard-balance'>
+				<p>{parseFloat(userBalance).toFixed(4)}</p>
+				<img src="images/eth.png" />
 			</div>
-			<div className='balanceDisplay'>
-				<h3>Balance: {userBalance}</h3>
-			</div>
-			{errorMessage}
 		</div>
-	);
+	) : (
+		{errorMessage}
+	)
 }
 
 export default WalletCardEthers;

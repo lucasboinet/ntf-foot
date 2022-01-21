@@ -1,12 +1,13 @@
 import './Detail.css';
 import React, {useState} from 'react'
 
-const Detail = ({categorie}) => {
+const Detail = ({categorie, setCategorie}) => {
     const [Id, setId] = useState(0);
 
     const changeValue = (value) => {
-        if ((Id > 0 && value === -1) || (Id < 5 && value === +1)){
+        if ((Id > 0 && value === -1) || (Id < 2 && value === +1)){
             setId(Id + value);
+            setCategorie(Id + value);
         }
     }
     return(
