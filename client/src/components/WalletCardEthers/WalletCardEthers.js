@@ -43,7 +43,7 @@ useEffect(() => {
 	
 	return !errorMessage ? (
 		<div className='walletCard'>
-			<h3>NFT-Foot</h3>
+			<h3>NFT-Potato</h3>
 			<div className='walletCard-owner'>{defaultAccount}</div>
 			<div className='walletCard-balance'>
 				<p>{parseFloat(userBalance).toFixed(4)}</p>

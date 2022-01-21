@@ -38,6 +38,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
+    width: auto;
 }
 
 .nftcard:hover .ntfcard-img-container button {

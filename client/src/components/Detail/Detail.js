@@ -5,7 +5,7 @@ const Detail = ({categorie, setCategorie, setModified}) => {
     const [Id, setId] = useState(0);
 
     const changeValue = (value) => {
-        if ((Id > 0 && value === -1) || (Id < 2 && value === +1)){
+        if ((Id > 0 && value === -1) || (Id < 3 && value === +1)){
             setId(Id + value);
             setCategorie(Id + value);
             setModified(1);

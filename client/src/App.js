@@ -8,7 +8,7 @@ import './App.css'
 import {generateName} from './lib/name';
 import NftCard from './components/NftCard/NftCard'
 
-const contractAddress = '0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9';
+const contractAddress = '0xa513E6E4b8f2a923D98304ec87F64353C4D5C853';
 
 const provider = new ethers.providers.Web3Provider(window.ethereum);
 
@@ -77,7 +77,7 @@ function App() {
   }
 
   const randomizeLook = () => {
-    const range = 2;
+    const range = 3;
 
     setHairs(Math.round(Math.random() * range))
     setMouth(Math.round(Math.random() * range))
